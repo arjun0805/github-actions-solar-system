@@ -95,7 +95,7 @@ jobs:
             password: ${{ secrets.GIT_HUB_TOKEN }}
         
         - name: Docker build
-          uses: docker/build-push-action@v6
+          uses: docker/build-push-action@v6 
           with:
             context: .
             push: false
