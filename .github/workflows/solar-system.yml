@@ -95,12 +95,12 @@ jobs:
           uses: docker/build-push-action@v6
           with:
             push: false
-            tags: ghcr.io/ ${{ vars.GIT_HUB_USERNAME }}/solar-system:${{ github.sha }}
+            tags: ghcr.io/${{ vars.GIT_HUB_USERNAME }}/solar-system:${{ github.sha }}
 
         - name: Docker push
           uses: docker/build-push-action@v6
           with:
             push: true
-            tags: ghcr.io/ ${{ vars.GIT_HUB_USERNAME }}/solar-system:${{ github.sha }}
+            tags: ghcr.io/${{ vars.GIT_HUB_USERNAME }}/solar-system:${{ github.sha }}
 
 
