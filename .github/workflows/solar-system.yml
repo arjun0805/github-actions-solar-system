@@ -79,6 +79,8 @@ jobs:
     docker:
       name: docker
       runs-on: ubuntu-latest
+      permissions: 
+        packages: write
       needs: [unit-testing,code-coverage]
       steps:
         - name: Checkout Repository
@@ -98,6 +100,7 @@ jobs:
             tags: ghcr.io/${{ vars.GIT_HUB_USERNAME }}/solar-system:${{ github.sha }}
 
         - name: Docker push
+          
           uses: docker/build-push-action@v6
           with:
             push: true
